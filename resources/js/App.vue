@@ -1,1 +1,6 @@
-<template><h1>You sucessfully logged in. Well done! :)</h1></template>
+<template>
+    <router-view></router-view>
+</template>
+
+
+

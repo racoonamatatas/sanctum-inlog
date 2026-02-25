@@ -18,7 +18,7 @@ const buttonText = 'Login';
 
 const handleSubmit = async (data: User) => {
     await axios.get('/sanctum/csrf-cookie').then(async () => {
-        await postRequest('/login', data);
+        await axios.post('/login', data);
         router.push({name: 'users.welcome'});
     });   
 }

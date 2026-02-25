@@ -8,7 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
 
-class LoginController extends Controller
+class UserController extends Controller
 {
     /**
      * Handle an authentication attempt.
@@ -34,5 +34,11 @@ class LoginController extends Controller
         return response()->json([
             'message' => 'The provided credentials do not match our records.'
         ], 401);
+    }
+
+    public function show(Request $request): JsonResponse
+    {
+        // Return the authenticated user's information
+        return response()->json($request->user());
     }
 }
